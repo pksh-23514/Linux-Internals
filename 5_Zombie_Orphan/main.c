@@ -30,15 +30,15 @@ void print_status (pid_t pid, int option)
 	{
 		do
 		{
-			read (fd, &ch, 1);
+			read (fd, &ch, 1);								//To read one Character from the Status File and store in the Field Array.
 			str [j][i++] = ch;
 
-			if (ch == '\n')
+			if (ch == '\n')									//If a New-line is encountered, one Field is read and the value of 'i' and 'j' shall be updated.
 			{
 				i = 0;
 				j += 1;
 			}
-		} while (j != 3);
+		} while (j != 3);									//The loop shall run till the Top 3 Fields are read.
 
 		if (option == 1)									//To print the Name and Status of the Child Process in Sleeping State ignoring the Umask.
 			printf ("%s%s", str [0], str [2]);
