@@ -25,9 +25,9 @@ int main (int argc, char* argv [])
 		printf ("Error: No Command Line Argumenrs passed.\nUsage: ./pipe <command1> '|' <command2> '|' <command3>\n");
 		return 0;
 	}
-	else										//Otherwise, proceed for the Processing of the Commands passed in CLA.
+	else										//Otherwise, proceed for the Processing of the Commands passed in the CLA.
 	{
-		int pipe_pos [2] = {1, 0};
+		int pipe_pos [2] = {1, 0};				//To store the Pipe positions in the CLA.
 
 		/* To get the First position of the Pipe '|' in the CLA */
 		while ((pipe_pos [0] < argc) && (strcmp (argv [pipe_pos [0]], "|")) != 0)
