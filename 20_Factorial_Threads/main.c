@@ -62,7 +62,10 @@ int main ()
 	{
 		/* Create the ith Thread by passing the Function and Arguments and receive the Thread ID */
 		pthread_create (&tid [i], NULL, factorial, (void*) &arg [i]);
-		
+	}
+
+	for (int i = 0; i < THREADS; i++)
+	{
 		/* Wait for the ith Thread to Terminate and receive the Value returned by the Thread Function */
 		pthread_join (tid [i], (void**) &ret);	//The address of 'ret' is type-casted to 'void**' to match the Prototype.
 
